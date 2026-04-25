@@ -6,7 +6,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, format_document, MessagesPlaceholder
 from langchain_core.runnables import RunnablePassthrough, RunnableWithMessageHistory, RunnableLambda
 
-from case.file_history_store import get_history
+from file_history_store import get_history
 from vector_stores import VectorStoreService
 import config_data as config
 
@@ -75,11 +75,11 @@ class RagService(object):
 
         return conversation_chain
 
-if __name__ == '__main__':
-    session_config={
-        "configurable":{
-            "session_id":"user_02",
-        }
-    }
-    res=RagService().chain.invoke({"input":"地球和火星哪个温度高"},session_config)
-    print(res)
+# if __name__ == '__main__':
+#     session_config={
+#         "configurable":{
+#             "session_id":"user_02",
+#         }
+#     }
+#     res=RagService().chain.invoke({"input":"地球和火星哪个温度高"},session_config)
+#     print(res)
